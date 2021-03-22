@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  height: 400px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #feeede;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+header > div > h2 {
+  margin-top: 0px;
+}
