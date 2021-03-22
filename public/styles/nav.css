@@ -29,10 +29,3 @@ nav > span {
   font-size: 30px;
   color: red;
 }
-
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
