@@ -1,10 +1,11 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: stretch;
-  width: 100%;
+  width: 95%;
   margin-top: 2em;
+  margin-bottom: 1em;
 }
 .newTweetTop {
   display: flex;
@@ -31,6 +32,9 @@
 
 .newTweetBottom > button {
   background-color: #4056a1;
+  font-size: 1em;
   color: #ffffff;
   border: 0;
+  height: 2.5rem;
+  width: 7rem;
 }
