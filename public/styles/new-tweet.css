@@ -1,0 +1,30 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+}
+.newTweetTop {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid #31302c;
+  box-shadow: 0px 1px 0px #5f5c53;
+}
+.newTweetTop > textarea {
+}
+
+.newTweetBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.newTweetBottom > button {
+  font-family: "Bungee";
+  background-color: #4056a1;
+  color: #ffffff;
+  border: 0;
+}
