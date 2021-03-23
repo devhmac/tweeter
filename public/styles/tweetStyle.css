@@ -47,6 +47,7 @@ article.tweet > p {
   padding-bottom: 1em;
   margin-bottom: 10px;
   font-size: 20px;
+  font-weight: 600;
 }
 
 article.tweet > footer {
@@ -57,12 +58,18 @@ article.tweet > footer {
   margin-left: 1em;
   margin-right: 1em;
 }
+article.tweet > footer > div > i {
+  margin-left: 3px;
+  margin-right: 3px;
+}
 
 article.tweet:hover {
   box-shadow: 5px 5px #99a9e0;
-  font-weight: bold;
+
+  text-shadow: 0.4px 0.4px #5f5c53;
 }
 
 article.tweet:hover > header > h4 {
   display: flex;
+  text-shadow: 0.3px 0.3px #b4b4b4;
 }
