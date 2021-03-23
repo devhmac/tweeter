@@ -21,6 +21,7 @@
   resize: none;
   outline: none;
 }
+
 .newTweetBottom {
   font-family: "Bungee";
   display: flex;
@@ -37,4 +38,8 @@
   border: 0;
   height: 2.5rem;
   width: 7rem;
+}
+
+.redText {
+  color: red;
 }
