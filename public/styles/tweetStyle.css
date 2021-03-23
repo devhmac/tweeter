@@ -1,0 +1,42 @@
+.tweetContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+article.tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: ;
+  border: 4px solid #5f5c53;
+  padding: 0.5em;
+}
+
+article.tweet > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  height: 3em;
+}
+
+div.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.user > img {
+  height: 60px;
+}
+
+article.tweet > p {
+  border-bottom: 4px solid;
+}
+
+article.tweet > footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: small;
+}
