@@ -22,6 +22,7 @@ article.tweet > header {
 }
 
 article.tweet > header > h4 {
+  display: none;
   color: #b4b4b4;
   font-size: 22px;
 }
@@ -35,9 +36,8 @@ div.user {
 header > div.user > img {
   height: 50px;
 }
-header > div.user > h3 {
+header > div.user > p {
   font-size: 23px;
-  font-weight: 300;
 }
 
 article.tweet > p {
@@ -47,7 +47,6 @@ article.tweet > p {
   padding-bottom: 1em;
   margin-bottom: 10px;
   font-size: 20px;
-  font-weight: 600;
 }
 
 article.tweet > footer {
@@ -57,4 +56,13 @@ article.tweet > footer {
   font-size: small;
   margin-left: 1em;
   margin-right: 1em;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px #99a9e0;
+  font-weight: bold;
+}
+
+article.tweet:hover > header > h4 {
+  display: flex;
 }
