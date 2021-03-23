@@ -8,7 +8,8 @@ article.tweet {
   flex-direction: column;
   align-items: ;
   border: 4px solid #5f5c53;
-  padding: 0.5em;
+  padding: 0.7em;
+  margin: 10px 0px;
 }
 
 article.tweet > header {
@@ -20,18 +21,33 @@ article.tweet > header {
   height: 3em;
 }
 
+article.tweet > header > h4 {
+  color: #b4b4b4;
+  font-size: 22px;
+}
+
 div.user {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-div.user > img {
-  height: 60px;
+header > div.user > img {
+  height: 50px;
+}
+header > div.user > h3 {
+  font-size: 23px;
+  font-weight: 300;
 }
 
 article.tweet > p {
   border-bottom: 4px solid;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 1em;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 article.tweet > footer {
@@ -39,4 +55,6 @@ article.tweet > footer {
   flex-direction: row;
   justify-content: space-between;
   font-size: small;
+  margin-left: 1em;
+  margin-right: 1em;
 }
