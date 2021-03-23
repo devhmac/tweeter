@@ -3,9 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  width: 95%;
+
   margin-top: 2em;
   margin-bottom: 1em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 .newTweetTop {
   display: flex;

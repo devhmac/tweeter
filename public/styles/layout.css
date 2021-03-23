@@ -30,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   margin-left: 5%;
   margin-right: 5%;
   background-color: #f4f1ec;
