@@ -9,6 +9,12 @@ const timeSinceTweet = (unix) => {
   return moment(unix).fromNow();
 };
 
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 //turns tweet objects into HTML formatted tweet articles
 const createTweetElement = function(data) {
   let $tweet = $(`
@@ -16,17 +22,17 @@ const createTweetElement = function(data) {
   <header>
     <div class="user">
       <img
-        src="${data.user.avatars}"
+        src="${escape(data.user.avatars)}"
         alt="">
-      <p>${data.user.name}</p>
+      <p>${escape(data.user.name)}</p>
     </div>
-    <h4>${data.user.handle}</h4>
+    <h4>${escape(data.user.handle)}</h4>
   </header>
 
-  <p>${data.content.text}</p>
+  <p>${escape(data.content.text)}</p>
 
   <footer>
-    <span>${timeSinceTweet(data.created_at)}</span>
+    <span>${escape(timeSinceTweet(data.created_at))}</span>
     <div>
       <i class="fas fa-flag"></i>
       <i class="fas fa-retweet"></i>
@@ -72,7 +78,7 @@ $(document).ready(function() {
 
 
 
-    //should load any new tweets on press
+    //form verification
     if (!$(this).children().find('textarea').val()) {
       return alert('You cannot post an empty tweet')
     }
@@ -80,17 +86,22 @@ $(document).ready(function() {
       return alert("Your tweet exceeds the maximum characters")
     }
 
+    //tweet submission to database
     console.log('tweet submitted, sending to database');
     $.ajax('/tweets', {
       method: 'POST',
       data: $(this).serialize()
     })
       .then(function(tweet) {
+
+        //dynamically render new tweets after post, instead of refreshing
         loadTweets();
       })
       .catch((err) => {
         console.log('There was an error', err)
       })
+
+    //clear text area
     $(this).children().find('textarea').val('');
   });
 
