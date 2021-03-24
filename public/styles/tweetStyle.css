@@ -30,6 +30,7 @@ div.user {
   display: flex;
   flex-direction: row;
   align-items: center;
+  opacity: 0.7;
 }
 
 header > div.user > img {
@@ -41,13 +42,14 @@ header > div.user > p {
 }
 
 article.tweet > p {
-  border-bottom: 4px solid;
+  border-bottom: 4px solid #5f5c53;
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 1em;
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 600;
+  color: rgb(95, 92, 83, 0.7);
 }
 
 article.tweet > footer {
@@ -65,11 +67,13 @@ article.tweet > footer > div > i {
 }
 
 article.tweet:hover {
-  box-shadow: 5px 5px #99a9e0;
-  text-shadow: 0.3px 0.3px #5f5c53;
+  opacity: 1;
+  text-shadow: 0.1px 0.1px #5f5c53;
 }
 
 article.tweet:hover > header > h4 {
   display: flex;
-  text-shadow: 0.3px 0.3px #b4b4b4;
+}
+article.tweet:hover > header > div.user {
+  opacity: 1;
 }
