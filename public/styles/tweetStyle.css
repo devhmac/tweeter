@@ -1,4 +1,4 @@
-.tweetContainer {
+.#tweets-container {
   display: flex;
   flex-direction: column;
 }
@@ -21,8 +21,8 @@ article.tweet > header {
 }
 
 article.tweet > header > h4 {
-  display: none;
-  color: #b4b4b4;
+  visibility: hidden;
+  color: #99a9e0;
   font-size: 22px;
 }
 
@@ -59,17 +59,17 @@ article.tweet > footer {
   margin-right: 1em;
 }
 article.tweet > footer > div > i {
+  color: #4056a1;
   margin-left: 3px;
   margin-right: 3px;
 }
 
 article.tweet:hover {
   box-shadow: 5px 5px #99a9e0;
-
   text-shadow: 0.3px 0.3px #5f5c53;
 }
 
 article.tweet:hover > header > h4 {
-  display: flex;
+  visibility: visible;
   text-shadow: 0.3px 0.3px #b4b4b4;
 }
