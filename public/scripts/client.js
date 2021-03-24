@@ -45,9 +45,9 @@ const renderTweet = function(data) {
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then((tweets) => {
-
+      console.log("your page is grabbing the tweets from database")
       //when we have the data from GET request, pass it through renderTweet
-      renderTweet(tweets)
+      renderTweet(tweets.reverse())
     })
     .catch((err) => {
       console.log("There was an ERROR ", err)
@@ -64,6 +64,9 @@ $(document).ready(function() {
   $('form.tweetSubmit').on('submit', function(event) {
     event.preventDefault();
 
+    //should load any new tweets on press
+
+
     if (!$('.tweet-text').val()) {
       return alert('You cannot post an empty tweet')
     }
@@ -78,14 +81,15 @@ $(document).ready(function() {
       data: $(this).serialize()
     })
       .then(function(tweet) {
-        $('.tweet-text').val('')
-        loadTweets()
+        $('.tweet-text').val('');
+      })
+      .then(() => {
+        loadTweets();
       })
       .catch((err) => {
         console.log('There was an error', err)
       })
 
   });
-
 
 });
