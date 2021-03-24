@@ -2,7 +2,7 @@
 $(document).ready(function() {
   console.log('The document is ready!')
 
-  $('#tweet-text').on('input', function(e) {
+  $('.tweet-text').on('input', function(e) {
     let charCount = $(this).val().length;
     let remainingChars = 140 - charCount;
 

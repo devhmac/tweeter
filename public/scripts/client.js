@@ -31,6 +31,7 @@ const data = [
   }
 ]
 
+//turns tweet objects into HTML formatted tweet articles
 const createTweetElement = function(data) {
   return (`
   <article class="tweet">
@@ -58,12 +59,14 @@ const createTweetElement = function(data) {
   `);
 };
 
+//appends array of tweets to the tweets-container section
 const renderTweet = function(data) {
   for (let tweet of data) {
     let tweetTemp = createTweetElement(tweet);
     $('#tweets-container').append(tweetTemp);
   }
-}
+};
+
 
 
 
