@@ -28,7 +28,6 @@ nav > span {
   font-weight: 600;
 }
 .arrow {
-  transform: rotate(90deg);
-  font-size: 30px;
+  font-size: 20px;
   color: red;
 }
