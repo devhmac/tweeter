@@ -60,6 +60,8 @@ const createTweetElement = function(data) {
   return $tweet;
 };
 
+
+
 //appends array of tweets to the tweets-container section
 const renderTweet = function(data) {
   for (let tweet of data) {
@@ -68,10 +70,24 @@ const renderTweet = function(data) {
 };
 
 
-
-
-
 $(document).ready(function() {
+  console.log('doc is ready')
+
+  $('form.tweetSubmit').on('submit', function(event) {
+    console.log('tweet submitted, sending to database');
+    event.preventDefault();
+    $.ajax('/tweets', {
+      method: 'POST',
+      data: $(this).serialize()
+    })
+      .then(function(tweet) {
+        console.log('Tweet has successfully been sent to database');
+        $('.tweet-text').val('')
+      })
+      .catch((err) => {
+        console.log('There was an error', err)
+      })
+  });
   renderTweet(data);
 
 });
