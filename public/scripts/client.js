@@ -70,11 +70,13 @@ $(document).ready(function() {
   $('form.tweetSubmit').on('submit', function(event) {
     event.preventDefault();
 
+
+
     //should load any new tweets on press
-    if (!$('.tweet-text').val()) {
+    if (!$(this).children().find('textarea').val()) {
       return alert('You cannot post an empty tweet')
     }
-    if ($('.tweet-text').val().length > 140) {
+    if ($(this).children().find('textarea').val().length > 140) {
       return alert("Your tweet exceeds the maximum characters")
     }
 
