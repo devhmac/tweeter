@@ -86,7 +86,7 @@ $(document).ready(function() {
       data: $(this).serialize()
     })
       .then(function(tweet) {
-        $('.tweet-text').val('');
+        $(this).children().find('textarea').val('');
       })
       .then(() => {
         loadTweets();
