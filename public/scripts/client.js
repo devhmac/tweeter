@@ -86,15 +86,12 @@ $(document).ready(function() {
       data: $(this).serialize()
     })
       .then(function(tweet) {
-        $(this).children().find('textarea').val('');
-      })
-      .then(() => {
         loadTweets();
       })
       .catch((err) => {
         console.log('There was an error', err)
       })
-
+    $(this).children().find('textarea').val('');
   });
 
 });
