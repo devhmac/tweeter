@@ -4,32 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
 
 //turns tweet objects into HTML formatted tweet articles
 const createTweetElement = function(data) {
@@ -61,7 +35,6 @@ const createTweetElement = function(data) {
 };
 
 
-
 //appends array of tweets to the tweets-container section
 const renderTweet = function(data) {
   for (let tweet of data) {
@@ -72,8 +45,9 @@ const renderTweet = function(data) {
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then((tweets) => {
-      console.log(tweets)
-      return tweets;
+
+      //when we have the data from GET request, pass it through renderTweet
+      renderTweet(tweets)
     })
     .catch((err) => {
       console.log("There was an ERROR ", err)
@@ -83,10 +57,8 @@ const loadTweets = function() {
 loadTweets()
 
 
-
 $(document).ready(function() {
   console.log('doc is ready')
-
 
   $('form.tweetSubmit').on('submit', function(event) {
     console.log('tweet submitted, sending to database');
@@ -96,14 +68,12 @@ $(document).ready(function() {
       data: $(this).serialize()
     })
       .then(function(tweet) {
-        console.log('Tweet has successfully been sent to database');
         $('.tweet-text').val('')
       })
       .catch((err) => {
         console.log('There was an error', err)
       })
   });
-  renderTweet(data);
 
 
 });
