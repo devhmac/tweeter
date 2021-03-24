@@ -33,7 +33,7 @@ const data = [
 
 //turns tweet objects into HTML formatted tweet articles
 const createTweetElement = function(data) {
-  return (`
+  let $tweet = $(`
   <article class="tweet">
   <header>
     <div class="user">
@@ -57,13 +57,13 @@ const createTweetElement = function(data) {
   </footer>
 </article>
   `);
+  return $tweet;
 };
 
 //appends array of tweets to the tweets-container section
 const renderTweet = function(data) {
   for (let tweet of data) {
-    let tweetTemp = createTweetElement(tweet);
-    $('#tweets-container').append(tweetTemp);
+    $('#tweets-container').append(createTweetElement(tweet));
   }
 };
 
