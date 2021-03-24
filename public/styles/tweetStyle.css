@@ -21,7 +21,7 @@ article.tweet > header {
 }
 
 article.tweet > header > h4 {
-  visibility: hidden;
+  display: none;
   color: #99a9e0;
   font-size: 22px;
 }
@@ -70,6 +70,6 @@ article.tweet:hover {
 }
 
 article.tweet:hover > header > h4 {
-  visibility: visible;
+  display: flex;
   text-shadow: 0.3px 0.3px #b4b4b4;
 }
