@@ -54,6 +54,7 @@ const loadTweets = function() {
     })
 };
 
+//loads all tweets on page load
 loadTweets()
 
 
