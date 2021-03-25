@@ -42,6 +42,7 @@ header > div.user > p {
 }
 
 article.tweet > p {
+  overflow-wrap: break-word;
   border-bottom: 4px solid #5f5c53;
   padding-right: 10px;
   padding-left: 10px;
