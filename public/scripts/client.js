@@ -54,7 +54,7 @@ const renderTweet = function(data) {
   }
 };
 
-//Ajax get request to get data array, then async pass it though renderTweet
+//Ajax get request to get data json, then async pass it though renderTweet
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then((tweets) => {
@@ -91,6 +91,7 @@ const submitTweetPost = function(event) {
     .then(function(tweet) {
       //dynamically render new tweets after post, instead of refreshing
       loadTweets();
+      // could also use location.reload() apparently
     })
     .catch((err) => {
       console.log('There was an error', err)
@@ -98,6 +99,7 @@ const submitTweetPost = function(event) {
 
   //clear text area
   $(this).children().find('textarea').val('');
+  //reset counter
   $('.counter').text(140)
 };
 
