@@ -3,11 +3,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 120px;
-  background-color: #4056a1;
+  background: #4056a1;
   color: #ffffff;
   padding: 1.5em;
   position: fixed;
   top: 0%;
+  z-index: 1;
   width: 100%;
 }
 

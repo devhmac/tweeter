@@ -9,6 +9,7 @@ const timeSinceTweet = (unix) => {
   return moment(unix).fromNow();
 };
 
+//escape function for safe user input
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -75,8 +76,6 @@ $(document).ready(function() {
 
   $('form.tweetSubmit').on('submit', function(event) {
     event.preventDefault();
-
-
 
     //form verification
     if (!$(this).children().find('textarea').val()) {
