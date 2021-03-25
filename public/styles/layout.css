@@ -45,11 +45,20 @@ body {
   }
   body > header {
     width: 33%;
-    margin: 140px 5rem;
+    margin: 220px 5rem;
   }
   .container {
     width: 55%;
     float: right;
-    margin: 120px 0px;
+    margin: 200px 0px;
+  }
+}
+
+@media (max-width: 570px) {
+  nav > span {
+    font-size: 2rem;
+  }
+  .writeTweet {
+    font-size: 1rem;
   }
 }
