@@ -84,7 +84,6 @@ $(document).ready(function() {
     }
     if ($(this).children().find('textarea').val().length > 140) {
       return $('.errorText').text('Your Tweet exceeds the maximum characters').slideDown();
-
     }
 
     $('.errorText').text('').hide()
