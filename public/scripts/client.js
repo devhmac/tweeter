@@ -73,6 +73,7 @@ const submitTweetPost = function(event) {
   //form validation
   $('.errorText').slideUp(400).text('');
 
+
   if (!$(this).children().find('textarea').val()) {
     return $('.errorText').text('Please enter a valid tweet').slideDown();
 
@@ -88,7 +89,6 @@ const submitTweetPost = function(event) {
     data: $(this).serialize()
   })
     .then(function(tweet) {
-
       //dynamically render new tweets after post, instead of refreshing
       loadTweets();
     })
@@ -98,6 +98,7 @@ const submitTweetPost = function(event) {
 
   //clear text area
   $(this).children().find('textarea').val('');
+  $('.counter').text(140)
 };
 
 
