@@ -79,12 +79,15 @@ $(document).ready(function() {
 
     //form verification
     if (!$(this).children().find('textarea').val()) {
-      return $('.errors').text('Please enter a valid tweet').show();
-    }
-    if ($(this).children().find('textarea').val().length > 140) {
-      return $('.errors').text('Your Tweet exceeds the maximum characters').show();
+      return $('.errorText').text('Please enter a valid tweet').slideDown();
 
     }
+    if ($(this).children().find('textarea').val().length > 140) {
+      return $('.errorText').text('Your Tweet exceeds the maximum characters').slideDown();
+
+    }
+
+    $('.errorText').text('').hide()
 
     //tweet submission to database
     console.log('tweet submitted, sending to database');
@@ -103,6 +106,8 @@ $(document).ready(function() {
 
     //clear text area
     $(this).children().find('textarea').val('');
+
+
   });
 
 });
