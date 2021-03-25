@@ -116,6 +116,9 @@ $(document).ready(function() {
 
   $('.writeTweet').on('click', function() {
     $('.new-tweet').toggle(200);
-  })
+  });
+
+
+
 
 });
