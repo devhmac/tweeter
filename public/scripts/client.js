@@ -67,6 +67,44 @@ const loadTweets = function() {
     })
 };
 
+//on submit callback function - handles ajax post requests on submit and form validation
+const submitTweetPost = function(event) {
+  event.preventDefault();
+
+  $('.errorText').slideUp(400).text('');
+  //form verification
+  if (!$(this).children().find('textarea').val()) {
+    return $('.errorText').text('Please enter a valid tweet').slideDown();
+
+  }
+  if ($(this).children().find('textarea').val().length > 140) {
+    return $('.errorText').text('Your Tweet exceeds the maximum characters').slideDown();
+  }
+
+  //tweet submission to database
+  console.log('tweet submitted, sending to database');
+  $.ajax('/tweets', {
+    method: 'POST',
+    data: $(this).serialize()
+  })
+    .then(function(tweet) {
+
+      //dynamically render new tweets after post, instead of refreshing
+      loadTweets();
+    })
+    .catch((err) => {
+      console.log('There was an error', err)
+    })
+
+  //clear text area
+  $(this).children().find('textarea').val('');
+};
+
+
+
+
+
+
 //loads all tweets on page load
 loadTweets()
 
@@ -74,39 +112,6 @@ loadTweets()
 $(document).ready(function() {
   console.log('doc is ready')
 
-  $('form.tweetSubmit').on('submit', function(event) {
-    event.preventDefault();
-
-    $('.errorText').slideUp(400).text('');
-    //form verification
-    if (!$(this).children().find('textarea').val()) {
-      return $('.errorText').text('Please enter a valid tweet').slideDown();
-
-    }
-    if ($(this).children().find('textarea').val().length > 140) {
-      return $('.errorText').text('Your Tweet exceeds the maximum characters').slideDown();
-    }
-
-
-    //tweet submission to database
-    console.log('tweet submitted, sending to database');
-    $.ajax('/tweets', {
-      method: 'POST',
-      data: $(this).serialize()
-    })
-      .then(function(tweet) {
-
-        //dynamically render new tweets after post, instead of refreshing
-        loadTweets();
-      })
-      .catch((err) => {
-        console.log('There was an error', err)
-      })
-
-    //clear text area
-    $(this).children().find('textarea').val('');
-
-
-  });
+  $('form.tweetSubmit').on('submit', submitTweetPost);
 
 });
