@@ -77,6 +77,7 @@ $(document).ready(function() {
   $('form.tweetSubmit').on('submit', function(event) {
     event.preventDefault();
 
+    $('.errorText').slideUp(400).text('');
     //form verification
     if (!$(this).children().find('textarea').val()) {
       return $('.errorText').text('Please enter a valid tweet').slideDown();
@@ -86,7 +87,6 @@ $(document).ready(function() {
       return $('.errorText').text('Your Tweet exceeds the maximum characters').slideDown();
     }
 
-    $('.errorText').slideUp(400).text('');
 
     //tweet submission to database
     console.log('tweet submitted, sending to database');
