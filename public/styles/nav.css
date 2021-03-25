@@ -47,12 +47,14 @@ nav > span {
   margin-top: 10px;
   font-size: 20px;
   color: red;
-  animation: MoveUpDown 1s linear 3;
+  animation: MoveUpDown 1s linear 2;
 }
 @keyframes MoveUpDown {
-  0%, 50% {
+  0%,
+  50% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
+}
