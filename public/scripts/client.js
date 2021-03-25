@@ -86,7 +86,7 @@ $(document).ready(function() {
       return $('.errorText').text('Your Tweet exceeds the maximum characters').slideDown();
     }
 
-    $('.errorText').text('').hide()
+    $('.errorText').slideUp(400).text('');
 
     //tweet submission to database
     console.log('tweet submitted, sending to database');
