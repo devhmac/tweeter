@@ -38,6 +38,8 @@ body {
   background-color: #f4f1ec;
 }
 
+/* ---- media queries ---- */
+
 @media (min-width: 1024px) {
   body {
     flex-direction: row;
@@ -51,6 +53,14 @@ body {
     width: 55%;
     float: right;
     margin: 200px 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav {
+    background-color: #eb7c40;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    height: 90px;
   }
 }
 
