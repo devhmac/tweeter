@@ -47,12 +47,15 @@ body {
   }
   body > header {
     width: 33%;
-    margin: 220px 5rem;
+    margin: 220px 0px 0px 3rem;
   }
   .container {
     width: 55%;
     float: right;
     margin: 200px 0px;
+  }
+  #tweets-container {
+    margin-right: 3rem;
   }
 }
 
@@ -61,6 +64,9 @@ body {
     background-color: #eb7c40;
     background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     height: 90px;
+  }
+  body > header {
+    margin-top: 90px;
   }
 }
 
