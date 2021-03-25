@@ -79,10 +79,11 @@ $(document).ready(function() {
 
     //form verification
     if (!$(this).children().find('textarea').val()) {
-      return alert('You cannot post an empty tweet')
+      return $('.errors').text('Please enter a valid tweet').show();
     }
     if ($(this).children().find('textarea').val().length > 140) {
-      return alert("Your tweet exceeds the maximum characters")
+      return $('.errors').text('Your Tweet exceeds the maximum characters').show();
+
     }
 
     //tweet submission to database
