@@ -114,4 +114,8 @@ $(document).ready(function() {
 
   $('form.tweetSubmit').on('submit', submitTweetPost);
 
+  $('.writeTweet').on('click', function() {
+    $('.new-tweet').toggle(200);
+  })
+
 });
