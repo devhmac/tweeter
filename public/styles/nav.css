@@ -32,6 +32,7 @@ nav > span {
   margin-bottom: 10px;
 }
 .writeTweet:hover > .arrow {
+  animation: MoveUpDown 1s linear infinite;
   margin-top: 10px;
 }
 .writeTweet:active {
@@ -46,7 +47,7 @@ nav > span {
   margin-top: 10px;
   font-size: 20px;
   color: red;
-  animation: MoveUpDown 1s linear infinite;
+  animation: MoveUpDown 1s linear 3;
 }
 @keyframes MoveUpDown {
   0%, 50% {
