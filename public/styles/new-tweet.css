@@ -46,9 +46,14 @@
   color: red;
 }
 
-.errors {
-  display: none;
+.errorText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  display: none;
   color: red;
   font-weight: 600;
+  font-style: italic;
+  margin-bottom: 10px;
 }
