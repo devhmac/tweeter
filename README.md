@@ -1,4 +1,4 @@
-# Tweeter
+# Tweeter - Front End Project
 Tweeter is a single-page, dynamically rendered Twitter clone!
 
 * Utilizing HTML, CSS, JS, Jquery, Ajax requests and a backend of NodeJS, Express, and an in-memory-Object database. 
