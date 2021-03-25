@@ -47,19 +47,18 @@ const createTweetElement = function(data) {
 
 
 
-//appends array of tweets to the tweets-container section
+//prepends array of tweets to the tweets-container section
 const renderTweet = function(data) {
   for (let tweet of data) {
     $('#tweets-container').prepend(createTweetElement(tweet));
   }
 };
 
+//Ajax get request to get data array, then async pass it though renderTweet
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then((tweets) => {
       console.log("your page is grabbing the tweets from database")
-
-      //when we have the data from GET request, pass it through renderTweet
       renderTweet(tweets)
     })
     .catch((err) => {
@@ -71,8 +70,9 @@ const loadTweets = function() {
 const submitTweetPost = function(event) {
   event.preventDefault();
 
+  //form validation
   $('.errorText').slideUp(400).text('');
-  //form verification
+
   if (!$(this).children().find('textarea').val()) {
     return $('.errorText').text('Please enter a valid tweet').slideDown();
 
@@ -105,7 +105,7 @@ const submitTweetPost = function(event) {
 
 
 
-//loads all tweets on page load
+//loads initial tweets on page load
 loadTweets()
 
 
