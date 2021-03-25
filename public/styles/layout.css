@@ -52,10 +52,7 @@ body {
   .container {
     width: 55%;
     float: right;
-    margin: 200px 0px;
-  }
-  #tweets-container {
-    margin-right: 3rem;
+    margin: 200px 3rem 0px 0px;
   }
 }
 
