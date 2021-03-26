@@ -14,7 +14,7 @@ const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 //turns tweet objects into HTML formatted tweet articles
 const createTweetElement = function(data) {
@@ -61,12 +61,12 @@ const renderTweet = function(data) {
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then((tweets) => {
-      console.log("your page is grabbing the tweets from database")
-      renderTweet(tweets)
+      console.log("your page is grabbing the tweets from database");
+      renderTweet(tweets);
     })
     .catch((err) => {
-      console.log("There was an ERROR ", err)
-    })
+      console.log("There was an ERROR ", err);
+    });
 };
 
 //on submit callback function - handles ajax post requests on submit and form validation
@@ -97,13 +97,13 @@ const submitTweetPost = function(event) {
       // could also use location.reload() apparently
     })
     .catch((err) => {
-      console.log('There was an error', err)
-    })
+      console.log('There was an error', err);
+    });
 
   //clear text area
   $(this).children().find('textarea').val('');
   //reset counter
-  $('.counter').text(140)
+  $('.counter').text(140);
 };
 
 
@@ -112,11 +112,11 @@ const submitTweetPost = function(event) {
 
 
 //loads initial tweets on page load
-loadTweets()
+loadTweets();
 
 
 $(document).ready(function() {
-  console.log('doc is ready')
+  console.log('doc is ready');
 
   $('form.tweetSubmit').on('submit', submitTweetPost);
 
