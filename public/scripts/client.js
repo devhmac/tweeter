@@ -49,6 +49,9 @@ const createTweetElement = function(data) {
 
 //prepends array of tweets to the tweets-container section
 const renderTweet = function(data) {
+
+  //empties container as to not duplicate tweets
+  $('#tweets-container').empty();
   for (let tweet of data) {
     $('#tweets-container').prepend(createTweetElement(tweet));
   }
